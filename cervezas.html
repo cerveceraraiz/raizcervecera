@@ -1,37 +1,97 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="theme-color" content="#0b0b0b" />
-<link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
-<link rel="stylesheet" href="../styles.css" />
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script defer src="scripts/main.js"></script>
-<title>Cervezas — Raíz Cervecera</title></head><body><header class="site-header" role="banner">
-  <a class="brand" href="../index.html" aria-label="Inicio">
-    <img src="assets/logo.jpg" alt="Logo Raíz Cervecera" />
-    <span>Raíz Cervecera</span>
-  </a>
-  <button class="nav-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menú">☰</button>
-  <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
-    <ul>
-      <li><a href="../index.html">Inicio</a></li>
-      <li><a href="../cervezas.html">Cervezas</a></li>
-      <li><a href="../origen.html">Origen</a></li>
-      <li><a href="../contacto.html">Contacto</a></li>
-      <li><a href="../admin/index.html">Admin</a></li>
-    </ul>
-  </nav>
-</header>
-<main><section class="section"><h2>Nuestras Cervezas</h2><p>IPA Raíz, Amber del Valle, Lager Andina, Stout Raíz.</p></section></main><footer class="site-footer" aria-label="Pie de página">
-  <div class="footer-inner">
-    <p>© <span id="year"></span> Raíz Cervecera · Quilpué, Chile</p>
-    <div class="social">
-      <a class="social-link" href="https://www.instagram.com/raizcervecera" target="_blank" rel="noopener" aria-label="Instagram">
-        <span>@raizcervecera</span>
-      </a>
-      <a class="social-link" href="https://www.facebook.com/raizcervecera" target="_blank" rel="noopener" aria-label="Facebook">
-        <span>Raíz Cervecera</span>
-      </a>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cervezas — Raíz Cervecera</title>
+  <meta name="description" content="Nuestras cervezas artesanales. IPA Raíz, Amber del Valle, Lager Andina." />
+  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+  <style>
+    :root { --bg:#000; --text:#f5f5f5; --muted:#c8c8c8; --border:#222; --accent:#14b8a6; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.5}
+    header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 1rem;border-bottom:1px solid var(--border);background:#0b0b0b;position:sticky;top:0;z-index:50}
+    .brand{display:inline-flex;align-items:center;gap:.6rem;color:inherit;text-decoration:none}
+    .brand img{width:44px;height:auto}
+    nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+    nav a{color:var(--text);text-decoration:none;padding:.3rem .2rem}
+    nav a:hover{color:#fff}
+    main{max-width:1100px;margin:0 auto;padding:2rem 1rem}
+    h1{text-align:center;margin:0 0 1.5rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .card{background:#121212;border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+    .card__img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#0f0f0f}
+    .card__body{padding:1rem;flex:1}
+    .card__title{margin:.2rem 0 .4rem;font-size:1.25rem;font-weight:700}
+    .card__meta{color:var(--muted);margin:.2rem 0 .8rem}
+    .card__actions{display:flex;justify-content:center;padding:1rem;border-top:1px solid var(--border)}
+    .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .9rem;border:1px solid var(--border);border-radius:8px;background:#111;color:var(--text);text-decoration:none;cursor:pointer}
+    .btn.primary{background:var(--accent);border-color:transparent;color:#001514;font-weight:600}
+    footer{text-align:center;padding:1rem;border-top:1px solid var(--border);color:var(--muted);margin-top:2rem}
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="index.html" aria-label="Inicio">
+      <img src="assets/img/logo.png" alt="Logo Raíz Cervecera" />
+      <span>Raíz Cervecera</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="cervezas.html" aria-current="page">Cervezas</a></li>
+        <li><a href="origen.html">Origen</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="admin/index.html">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Nuestras Cervezas</h1>
+    <div class="grid">
+      <!-- IPA Raíz -->
+      <article class="card">
+        <img class="card__img" src="assets/img/cervezas/ipa-raiz.jpg" alt="Botella de IPA Raíz" />
+        <div class="card__body">
+          <h2 class="card__title">IPA Raíz</h2>
+          <p class="card__meta">ABV 6.2% · IBU 55</p>
+          <p>Aromas cítricos y resinosos, final seco y amargor pronunciado.</p>
+        </div>
+        <div class="card__actions">
+          <a class="btn primary" href="cervezas/ipa-raiz.html">Ver más</a>
+        </div>
+      </article>
+
+      <!-- Amber del Valle -->
+      <article class="card">
+        <img class="card__img" src="assets/img/cervezas/amber-del-valle.jpg" alt="Botella de Amber del Valle" />
+        <div class="card__body">
+          <h2 class="card__title">Amber del Valle</h2>
+          <p class="card__meta">ABV 5.4% · IBU 28</p>
+          <p>Notas a caramelo y pan tostado, balanceada y fácil de beber.</p>
+        </div>
+        <div class="card__actions">
+          <a class="btn primary" href="cervezas/amber-del-valle.html">Ver más</a>
+        </div>
+      </article>
+
+      <!-- Lager Andina -->
+      <article class="card">
+        <img class="card__img" src="assets/img/cervezas/lager-andina.jpg" alt="Botella de Lager Andina" />
+        <div class="card__body">
+          <h2 class="card__title">Lager Andina</h2>
+          <p class="card__meta">ABV 4.8% · IBU 18</p>
+          <p>Limpia, refrescante y suave; ideal para acompañar comidas.</p>
+        </div>
+        <div class="card__actions">
+          <a class="btn primary" href="cervezas/lager-andina.html">Ver más</a>
+        </div>
+      </article>
     </div>
-  </div>
-</footer>
-</body></html>
+  </main>
+
+  <footer>© Raíz Cervecera · Quilpué, Chile</footer>
+</body>
+</html>
