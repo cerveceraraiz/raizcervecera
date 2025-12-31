@@ -8,11 +8,16 @@
   <style>
     :root { --bg:#ffffff; --text:#222; --accent:#1f6f50; }
     html, body { height:100%; }
-    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:var(--bg); }
+    body {
+      margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      color:var(--text);
+      background:#111 url('assets/img/Fondo_raiz.jpg') center/cover no-repeat fixed; /* fondo */
+    }
+    .page { background: rgba(255,255,255,0.85); min-height:100dvh; }
 
-    header { display:grid; grid-template-columns: 1fr; gap:12px; padding:12px 20px; border-bottom:1px solid #eee; }
+    header { display:grid; grid-template-columns: 1fr; gap:12px; padding:12px 20px; border-bottom:1px solid #eee; backdrop-filter: blur(2px); }
     .logo-wrap { display:flex; align-items:center; gap:12px; }
-    .logo { height:48px; width:auto; mix-blend-mode:multiply; image-rendering:-webkit-optimize-contrast; }
+    .logo { height:40px; width:auto; mix-blend-mode:multiply; image-rendering:-webkit-optimize-contrast; }
 
     nav { width:100%; }
     .menu { list-style:none; margin:0; padding:0; display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; }
@@ -21,7 +26,7 @@
     .menu li.login { margin-left:auto; }
     @media (max-width:560px){ .menu{ justify-content:center; } .menu li.login{ flex-basis:100%; text-align:right; } }
 
-    .container { max-width:420px; margin:48px auto; padding:24px; border:1px solid #eee; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+    .container { max-width:420px; margin:48px auto; padding:24px; border:1px solid #eee; border-radius:12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
     h1 { margin:0 0 16px; font-size:1.6rem; text-align:center; }
     form { display:grid; gap:12px; }
     label { font-weight:600; }
@@ -30,47 +35,49 @@
     button:hover { filter:brightness(1.05); }
     .note { text-align:center; color:#666; font-size:0.9rem; margin-top:8px; }
 
-    footer { text-align:center; padding:20px; color:#666; border-top:1px solid #eee; }
+    footer { text-align:center; padding:20px; color:#666; border-top:1px solid #eee; backdrop-filter: blur(2px); }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-wrap">
-      <a href="index.html" aria-label="Inicio">
-        <img src="assets/img/logo.png" alt="Logo Raíz Cervecera" class="logo" />
-      </a>
-    </div>
-    <nav aria-label="Menú principal">
-      <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="cervezas.html">Cervezas</a></li>
-        <li><a href="origen.html">Origen</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li class="login"><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="page">
+    <header>
+      <div class="logo-wrap">
+        <a href="index.html" aria-label="Inicio">
+          <img src="assets/img/logo.png" alt="Logo Raíz Cervecera" class="logo" />
+        </a>
+      </div>
+      <nav aria-label="Menú principal">
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="cervezas.html">Cervezas</a></li>
+          <li><a href="origen.html">Origen</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li class="login"><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <div class="container" role="form">
-      <h1>Acceder</h1>
-      <form action="#" method="post" autocomplete="on">
-        <div>
-          <label for="email">Correo</label>
-          <input type="email" id="email" name="email" placeholder="tucorreo@dominio.cl" required />
-        </div>
-        <div>
-          <label for="password">Contraseña</label>
-          <input type="password" id="password" name="password" placeholder="••••••••" required />
-        </div>
-        <button type="submit">Ingresar</button>
-        <p class="note">Si olvidaste tu contraseña, contáctanos.</p>
-      </form>
-    </div>
-  </main>
+    <main>
+      <div class="container" role="form">
+        <h1>Acceder</h1>
+        <form action="#" method="post" autocomplete="on">
+          <div>
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@dominio.cl" required />
+          </div>
+          <div>
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="••••••••" required />
+          </div>
+          <button type="submit">Ingresar</button>
+          <p class="note">Si olvidaste tu contraseña, contáctanos.</p>
+        </form>
+      </div>
+    </main>
 
-  <footer>
-    © Raíz Cervecera · Quilpué, Chile
-  </footer>
+    <footer>
+      © Raíz Cervecera · Quilpué, Chile
+    </footer>
+  </div>
 </body>
 </html>
