@@ -1,4 +1,36 @@
 
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.menu a:hover {
+  background: #f3f3f3;
+}
+.menu li.login {
+  margin-left: auto; /* mantiene Login a la derecha */
+}
+@media (max-width: 560px) {
+  .menu {
+    justify-content: center;
+  }
+  .menu li.login {
+    flex-basis: 100%;
+    text-align: right;
+  }
+}
+
 
 
 footer {
