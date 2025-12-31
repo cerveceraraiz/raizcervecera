@@ -34,6 +34,12 @@
     input, textarea { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:1rem; }
     button { background:var(--accent); color:#fff; border:none; border-radius:8px; padding:10px 14px; font-weight:600; cursor:pointer; }
     button:hover { filter:brightness(1.05); }
+    /* Footer */
+    footer { text-align:center; padding:20px; color:#666; border-top:1px solid #eee; backdrop-filter: blur(2px); background: rgba(255,255,255,0.85); }
+    .footer-bottom { display:inline-flex; gap:10px; align-items:center; justify-content:center; margin-top:8px; }
+    .social-link { color:#1f6f50; text-decoration:none; font-size:0.95rem; word-break:break-all; }
+    .social-link:hover { text-decoration: underline; }
+    .sep { color:#999; }
   </style>
 
 </head>
@@ -76,6 +82,16 @@
         </div>
       </div>
     </main>
+
+    <footer role="contentinfo" aria-label="Pie de página">
+      <div>© Raíz Cervecera · Quilpué, Chile</div>
+      <div class="footer-bottom" aria-label="Redes sociales">
+        <a class="social-link" href="https://instagram.com/raizcervecera" target="_blank" rel="noopener noreferrer">https://instagram.com/raizcervecera</a>
+        <span class="sep">·</span>
+        <a class="social-link" href="https://web.facebook.com/RaizCervecera" target="_blank" rel="noopener noreferrer">https://web.facebook.com/RaizCervecera</a>
+      </div>
+    </footer>
+
   </div>
 </body>
 </html>
