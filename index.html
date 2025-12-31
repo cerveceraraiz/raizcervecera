@@ -1,183 +1,59 @@
+
 <!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Inicio — Raíz Cervecera</title>
-  <meta name="description" content="Desde la raíz, cerveza de verdad. Pequeños lotes, gran carácter." />
-  <link rel="icon" href="assets/img/logo.png" type="image/png" />
   <style>
-    :root {
-      --bg: #000000;   /* Fondo negro */
-      --text: #f5f5f5; /* Texto claro */
-      --muted: #c8c8c8;
-      --border: #222222;
-      --accent: #14b8a6; /* teal para acentos en oscuro */
-    }
+    :root { --bg:#ffffff; --text:#222; --accent:#1f6f50; }
+    html, body { height:100%; }
+    body { margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans",sans-serif; color:var(--text); background:var(--bg); }
 
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.5;
-    }
+    header { display:grid; grid-template-columns: 1fr; gap:12px; padding:12px 20px; border-bottom:1px solid #eee; }
+    .logo-wrap { display:flex; align-items:center; gap:12px; }
+    .logo { height:48px; width:auto; mix-blend-mode:multiply; image-rendering:-webkit-optimize-contrast; }
+    .logo.whitefix { filter:brightness(0.98) contrast(1.05); }
 
-    /* Header en oscuro */
-    .site-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid var(--border);
-      background: rgba(0,0,0,0.6); /* semitransparente para sticky */
-      backdrop-filter: blur(4px);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
+    nav { width:100%; }
+    .menu { list-style:none; margin:0; padding:0; display:flex; justify-content:center; align-items:center; gap:16px; flex-wrap:wrap; }
+    .menu a { text-decoration:none; color:var(--text); padding:8px 10px; border-radius:6px; }
+    .menu a:hover { background:#f3f3f3; }
+    .menu li.login { margin-left:auto; }
+    @media (max-width:560px){ .menu{ justify-content:center; } .menu li.login{ flex-basis:100%; text-align:right; } }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      text-decoration: none;
-      color: inherit;
-    }
-    .brand__logo {
-      width: 48px;
-      height: auto;
-      display: block;
-    }
-    .brand__name {
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.2px;
-    }
+    .hero { text-align:center; padding:48px 20px; }
+    .hero h1 { font-size:clamp(1.8rem,2.5vw,2.4rem); margin:0 0 6px; }
+    .hero h2 { font-size:clamp(1.2rem,2vw,1.6rem); font-weight:600; margin:10px 0 18px; color:#444; }
+    .hero p { max-width:780px; margin:0 auto; color:#555; }
 
-    /* Nav */
-    .site-nav { display: flex; align-items: center; gap: 0.75rem; }
-    .nav__toggle { display: none; color: var(--text); }
-    .nav__list {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .site-nav a {
-      text-decoration: none;
-      color: var(--text);
-      padding: 0.3rem 0.2rem;
-    }
-    .site-nav a:hover { color: #ffffff; }
-
-    /* Sección con logo centrado */
-    .center-logo {
-      min-height: 60vh;
-      display: grid;
-      place-items: center;
-      padding: 2.5rem 1rem;
-    }
-    .center-logo img {
-      width: clamp(160px, 30vw, 360px);
-      height: auto;
-      filter: drop-shadow(0 6px 18px rgba(0,0,0,.6));
-    }
-    .center-logo .caption {
-      margin-top: 0.75rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-      text-align: center;
-    }
-
-    /* Hero */
-    .hero {
-      max-width: 1024px;
-      margin: 0 auto;
-      padding: 1rem;
-      text-align: center;
-    }
-    .hero h1 { font-size: 2rem; margin: 0 0 0.5rem; }
-    .hero p { color: var(--muted); margin: 0.25rem 0 1rem; }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      margin-top: 2rem;
-      padding: 1rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .site-header { flex-wrap: wrap; }
-      .nav__toggle {
-        display: inline-block;
-        background: none;
-        border: 1px solid var(--border);
-        padding: 0.4rem 0.6rem;
-        border-radius: 6px;
-        cursor: pointer;
-      }
-      .nav__list {
-        width: 100%;
-        margin-top: 0.5rem;
-        flex-direction: column;
-      }
-    }
+    footer { text-align:center; padding:20px; color:#666; border-top:1px solid #eee; }
   </style>
-  <script>
-    // Toggle simple para menú móvil
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggle = document.querySelector('.nav__toggle');
-      const list = document.getElementById('primary-nav');
-      if (toggle && list) {
-        toggle.addEventListener('click', () => {
-          const expanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!expanded));
-          list.style.display = expanded ? '' : 'block';
-        });
-      }
-    });
-  </script>
 </head>
 <body>
-  <!-- Header con logo y navegación -->
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Ir al inicio">
-      <img src="assets/img/logo.png" alt="Logo Raíz Cervecera" class="brand__logo" />
-      <span class="brand__name">Raíz Cervecera</span>
-    </a>
-
-    <nav class="site-nav" aria-label="Navegación principal">
-      <button class="nav__toggle" aria-expanded="false" aria-controls="primary-nav">☰</button>
-      <ul id="primary-nav" class="nav__list">
+  <header>
+    <div class="logo-wrap">
+      <a href="index.html" aria-label="Inicio">
+        <img src="assets/img/logo.png" alt="Logo Raíz Cervecera" class="logo" />
+      </a>
+    </div>
+    <nav aria-label="Menú principal">
+      <ul class="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="cervezas.html">Cervezas</a></li>
         <li><a href="origen.html">Origen</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="admin/index.html">Admin</a></li>
+        <li class="login"><a href="login.html">Login</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Logo centrado en la página -->
-  <section class="center-logo" aria-label="Logo principal de Raíz Cervecera">
-    <div>
-      <img src="assets/img/logo.png" alt="Logo principal Raíz Cervecera" />
-      <div class="caption">Desde la raíz, cerveza de verdad</div>
-    </div>
-  </section>
-
-  <!-- Hero / contenido principal -->
-  <main class="hero">
-    <h1>Pequeños lotes, gran carácter</h1>
-    <p>Ingredientes locales y procesos cuidados.</p>
+  <main>
+    <section class="hero">
+      <h1>Logo principal Raíz Cervecera</h1>
+      <h2>Desde la raíz, cerveza de verdad</h2>
+      <p>Pequeños lotes, gran carácter. Ingredientes locales y procesos cuidados.</p>
+    </section>
   </main>
 
   <footer>
