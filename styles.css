@@ -23,7 +23,7 @@ body {
   line-height: 1.6;
 
   /* Imagen de fondo adjunta */
-  background: url('Fondo_raiz.jpg') no-repeat center center fixed;
+  background: url('assets/img/Fondo_raiz.jpg') no-repeat center center fixed;
   background-size: cover; /* cubre toda la pantalla */
 }
 
