@@ -15,20 +15,26 @@
 html,body{height:100%}
 
 /* Fondo con imagen + overlay para legibilidad */
-body{
-  margin:0;
-  color:var(--text);
-  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-  line-height:1.6;
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.6;
+
+  /* Imagen de fondo adjunta */
   background: url('Fondo_raiz.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-size: cover; /* cubre toda la pantalla */
 }
-body::before{
-  content:"";
-  position:fixed; inset:0;
-  background: rgba(18,18,18,0.85); /* oscurece el fondo */
-  z-index:-1; /* detrás del contenido */
+
+
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background: rgba(18, 18, 18, 0.85); /* oscurece el fondo para alto contraste */
+  z-index: -1; /* detrás del contenido */
 }
+
 
 /* Header & navegación */
 header{
