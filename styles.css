@@ -73,3 +73,67 @@ footer{ background: rgba(0,0,0,.6); backdrop-filter: blur(6px); border-top:1px s
 .social{ display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; }
 .social a{ color: var(--accent); font-weight:700; text-decoration:none; display:flex; align-items:center; gap:.35rem; }
 .social a:hover{ color:#ffe08a; }
+
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  border-top: 1px solid #eee;
+  backdrop-filter: blur(2px);
+}
+
+/* Contenedor de redes */
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  color: #444;
+}
+
+/* Lista de iconos */
+.social {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(31, 111, 80, 0.10); /* usa tu --accent si prefieres */
+  border: 1px solid #ddd;
+  text-decoration: none;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.social a:hover {
+  transform: translateY(-1px);
+  background: rgba(31, 111, 80, 0.18);
+  border-color: #ccc;
+}
+
+/* Color de los SVG (usa el color actual del texto) */
+.social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  color: #1f6f50; /* tono verde acorde al sitio */
+}
+
+/* Texto © */
+.footer-copy {
+  font-size: 0.95rem;
+  color: #666;
+}
+
