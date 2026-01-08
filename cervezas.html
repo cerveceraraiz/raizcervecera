@@ -40,8 +40,9 @@
     justify-content: center;
     margin-top: 20px;
 }
+
 .cerveza-item {
-    background-color: #fff;
+    background-color: transparent;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -50,6 +51,7 @@
     padding: 15px;
     transition: transform 0.3s ease;
 }
+
 .cerveza-item:hover {
     transform: scale(1.05);
 }
@@ -58,11 +60,20 @@
     height: auto;
     border-radius: 8px;
 }
+
+
 .cerveza-item h3 {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: #333;
+    color: rgba(255, 215, 0, 0.95); /* Dorado intenso */
+    font-weight: bold;
 }
+
+.cerveza-item p,
+.cerveza-item .precio,
+.cerveza-item .eslogan {
+    color: rgba(255, 215, 0, 0.85); /* Dorado más suave para párrafos */
+}
+
+
 .cerveza-item p {
     font-size: 0.95em;
     color: #555;
@@ -94,11 +105,38 @@
 <section class="card">
 <h1 class="brand">Nuestras Cervezas</h1>
 <p class="subtitle">Descubre nuestras variedades, estilos y notas de cata.</p>
-<p>Contenido en preparación.</p><section class="lista-cervezas"><div class="cerveza-item"><img alt="Cerveza Tropical" src="assets/img/Tropical_RAIZ.jpg"/><h3>Cerveza Tropical</h3><p>Refrescante y ligera, ideal para días soleados.</p>
-<p class="precio">Precio: $2.500 CLP</p>
-<p class="precio">6 y 12: $2.400 CLP</p>
-<p class="precio">12 y más: $2.300 CLP</p>
-</div><div class="cerveza-item"><img alt="Cerveza Pale Ale" src="assets/img/PaleAle_RAIZ.jpg"/><h3>Cerveza Pale Ale</h3><p>Intensa y aromática, con notas cítricas y amargas.</p><p class="precio">Precio: $3.500 CLP</p></div><div class="cerveza-item"><img alt="Cerveza Stout" src="assets/img/Stout_RAIZ.jpg"/><h3>Cerveza Stout</h3><p>Oscura y cremosa, con sabor a café y chocolate.</p><p class="precio">Precio: $4.000 CLP</p></div></section>
+<p>Contenido en preparación.</p><section class="lista-cervezas">
+
+<div class="cerveza-item">
+    <img src="assets/img/Tropical_RAIZ.jpg" alt="Cerveza Tropical">
+    <h3>Cerveza Tropical Premium</h3>
+    <p class="precio">Precio: $2.500 CLP</p>
+    <p class="eslogan">Ideal para acompañar tus mejores momentos.</p>
+</div
+</section>
+
+<div class="cerveza-item">
+    <img src="assets/img/PaleAle_RAIZ.jpg" alt="Cerveza Pale Ale">
+    <h3>Cerveza Pale Ale Premium</h3>
+    <p class="precio">Precio: $2.500 CLP</p>
+    <p class="eslogan">Ideal para acompañar tus mejores momentos.</p>
+</div
+
+
+
+/section>
+
+<div class="cerveza-item">
+    <img src="assets/img/Stout_RAIZ.jpg" alt="Cerveza Stout">
+    <h3>Cerveza Stout Premium</h3>
+    <p class="precio">Precio: $2.500 CLP</p>
+    <p class="eslogan">Ideal para acompañar tus mejores momentos.</p>
+</div
+
+
+
+</section>
+
 </section>
 </main>
 <footer>
