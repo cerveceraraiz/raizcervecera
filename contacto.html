@@ -173,8 +173,36 @@
             <p id="statusErr" class="status err" role="alert">Revisa los campos requeridos.</p>
 		  </form>
 		  <!-- FORMULARIO CONFIGURADO PARA NETLIFY -->
-  <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="contacto" />	</form>
+
+<form name="contacto" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="contacto">
+
+  <label>Nombre *</label>
+  <input type="text" name="nombre" required>
+
+  <label>Correo electrónico *</label>
+  <input type="email" name="email" required>
+
+  <label>Fono (opcional)</label>
+  <input type="text" name="fono">
+
+  <label>Asunto *</label>
+  <input type="text" name="asunto" required>
+
+  <label>Tipo de consulta</label>
+  <select name="tipo">
+    <option value="Pedido">Pedido</option>
+    <option value="Colaboración">Colaboración</option>
+    <option value="Distribución">Distribución</option>
+    <option value="Otra">Otra</option>
+  </select>
+
+  <label>Mensaje *</label>
+  <textarea name="mensaje" required></textarea>
+
+  <button type="submit">Enviar</button>
+</form>
+
         </div>
       </section>
 
