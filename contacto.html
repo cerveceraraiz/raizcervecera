@@ -51,12 +51,12 @@
       display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:56px;
     }
     .brand{font-weight:700; letter-spacing:.3px}
-      .nav { display:flex; gap:1rem; padding:1rem; align-items:center; justify-content:center; flex-wrap:wrap; }
+    .nav { display:flex; gap:1rem; padding:1rem; align-items:left; justify-content:center; flex-wrap:wrap; }
     .nav a { color:#ffd56b; text-decoration:none; font-weight:600; }
     .nav a:hover { text-decoration: underline; }
 
     /* Diseño principal */
-   main { flex:1; display:grid; place-items:center; padding:2rem; text-align:center; }
+   main { flex:1; display:grid; place-items:center; padding:2rem; text-align:left; }
     @media (min-width: 700px){
       .grid{grid-template-columns: 1.1fr .9fr}
     }
@@ -79,7 +79,7 @@
     input:focus, select:focus, textarea:focus{outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(228,163,11,.15)}
 
     .row{display:grid; grid-template-columns:1fr; gap:12px}
-    @media (min-width: 520px){ .row.two{grid-template-columns:1fr 1fr} }
+    @media (min-width: 768px){ .row.two{grid-template-columns:1fr 1fr} }
 
     .help{color:var(--muted); font-size:.9rem}
     .actions{display:flex; gap:12px; flex-wrap:wrap}
@@ -107,7 +107,7 @@
   </style>
 </head>
 <body>
-	<div class="overlay">
+<div class="overlay">
   <header>
  <nav aria-label="Principal" class="nav">
 <a href="index.html">Inicio</a>
@@ -126,7 +126,7 @@
           <p class="lead">Escríbenos para pedidos, colaboraciones o consultas. Te responderemos a la brevedad.</p>
 
           <form id="contactoForm" novalidate>
-            <div class="row two">
+            <div class="row">
               <div>
                 <label for="nombre">Nombre <span class="req" aria-hidden="true">*</span></label>
                 <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required />
