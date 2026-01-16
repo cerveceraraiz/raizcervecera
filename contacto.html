@@ -44,6 +44,8 @@
     a{color:var(--primary); text-decoration:none}
     a:hover{text-decoration:underline}
 
+	 .card { background: rgba(0,0,0,0.35); border: 1px solid rgba(255,213,107,0.4); border-radius:12px; padding:2rem 2.25rem; max-width: 10000px;}
+
     /* Cabecera y navegación */
      header { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(2px); }
 	    .container{max-width:980px; margin:0 auto; padding:0 16px}
@@ -113,6 +115,16 @@ button{
       a, button{min-height:44px}
     }
   </style>
+
+	<style>
+.lista-contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+ </style>
 </head>
 <body>
 <div class="overlay">
@@ -127,8 +139,10 @@ button{
   </header>
 
  <main>
-    <h2>Contacto</h2>
+    <section class="card">
+ 	<h1 class="brand">Contacto</h1>
     <p>Escríbenos para pedidos, colaboraciones o consultas. Te responderemos a la brevedad.</p>
+	<section class="lista-contacto">
 
     <!-- Formulario para Netlify -->
     <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
